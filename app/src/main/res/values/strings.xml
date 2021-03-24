@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Color Code Generator</string>
+    <string name="powered_by_banglabs_txt">Powered by</string>
+    <string name="sample_admob_unit_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="real_admob_unit_id">ca-app-pub-7419624357060010~4335859270</string>
+
+
+    <string name="sample_add_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="real_add_unit_id">ca-app-pub-7419624357060010/1518124246</string>
+
+
+
+
+
+
+
+
+</resources>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashScreen">
+
+    <ImageView
+        android:id="@+id/icon_id"
+        android:layout_centerInParent="true"
+        android:layout_height="320dp"
+        android:layout_width="wrap_content"
+        android:src="@drawable/color_code_icon"/>
+
+    <LinearLayout
+        android:layout_below="@+id/icon_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="Color"
+            android:textColor="#FF0000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="Code"
+            android:textColor="#00FF00"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="Genaretor"
+            android:textColor="#0000FF"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/poweredby_id"
+        android:layout_above="@+id/banglabs_icon_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="@string/powered_by_banglabs_txt"
+        android:textColor="#468ADA"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:layout_marginBottom="20dp"
+        android:id="@+id/banglabs_icon_id"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:src="@drawable/banglabs_icon"
+        
+        />
+
+</RelativeLayout>
