@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
 
         AdView mAdView = findViewById(R.id.adView);
-        MobileAds.initialize(this, "ca-app-pub-3940256099942544/6300978111");
+        MobileAds.initialize(this, "ca-app-pub-7419624357060010/1518124246");
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 

@@ -119,7 +119,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/sample_add_unit_id">
+        ads:adUnitId="@string/real_add_unit_id">
     </com.google.android.gms.ads.AdView>
 
 
