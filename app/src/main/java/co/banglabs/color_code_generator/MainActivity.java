@@ -1,6 +1,9 @@
 package co.banglabs.color_code_generator;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -37,8 +40,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         mAdView.loadAd(adRequest);
 
 
-
-
         sbRed.setOnSeekBarChangeListener(this);
         sbGreen.setOnSeekBarChangeListener(this);
         sbBlue.setOnSeekBarChangeListener(this);
@@ -66,11 +67,11 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
         }
 
-        vColor.setBackgroundColor(Color.rgb(red,green,blue));
-        String code = HexCOde(red,green,blue);
+        vColor.setBackgroundColor(Color.rgb(red, green, blue));
+        String code = HexCOde(red, green, blue);
 
         tvColor.setText(code.toUpperCase());
-        tvValue.setText(String.format("RGB (%d, %d, %d)",red,green,blue));
+        tvValue.setText(String.format("RGB (%d, %d, %d)", red, green, blue));
 
 
     }
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     private String HexCOde(int red, int green, int blue) {
 
         String code;
-        code ="#";
+        code = "#";
         code += Integer.toHexString(red);
         code += Integer.toHexString(green);
         code += Integer.toHexString(blue);
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         return code;
 
     }
+
 
     @Override
     public void onStartTrackingTouch(SeekBar seekBar) {
@@ -96,4 +98,21 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     public void onStopTrackingTouch(SeekBar seekBar) {
 
     }
+
+
+    // on back press
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setMessage("Are you sure you want to exit?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        MainActivity.this.finish();
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
+    }
+
+
 }
