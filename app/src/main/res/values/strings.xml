@@ -2,17 +2,18 @@
     <string name="app_name">Color Code Generator</string>
     <string name="powered_by_banglabs_txt">Powered by</string>
     <string name="sample_admob_unit_id">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="real_admob_unit_id">ca-app-pub-7419624357060010~4335859270</string>
+    <string name="real_admob_unit_id">ca-app-pub-1716189511430378~3912902032</string>
 
 
     <string name="sample_add_unit_id">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="real_add_unit_id">ca-app-pub-7419624357060010/1518124246</string>
-
-
-
-
-
-
+    <string name="real_add_unit_id">ca-app-pub-1716189511430378/1058673834</string>
+    <string name="share_app">Share App</string>
+    <string name="rate_app">Rate App</string>
+    <string name="color">Color</string>
+    <string name="code">Code</string>
+    <string name="generator">Generator</string>
+    <string name="_000">#000</string>
+    <string name="rgb_0_0_0">RGB(0, 0, 0)</string>
 
 
 </resources>
