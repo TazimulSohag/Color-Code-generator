@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -22,12 +23,13 @@ import com.google.android.gms.ads.MobileAds;
 
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
+public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener, View.OnClickListener {
 
     View vColor;
     TextView tvColor, tvValue;
     SeekBar sbRed, sbGreen, sbBlue;
     int red = 0, green = 0, blue = 0;
+    Button share,rate;
 
 
     @Override
@@ -35,25 +37,29 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Objects.requireNonNull(getSupportActionBar()).setTitle("");
-
         vColor = findViewById(R.id.v_color);
         tvColor = findViewById(R.id.tv_code);
         tvValue = findViewById(R.id.tv_value);
         sbRed = findViewById(R.id.sb_red);
         sbGreen = findViewById(R.id.sb_green);
         sbBlue = findViewById(R.id.sb_blue);
+        rate = findViewById(R.id.rate_id);
+        share = findViewById(R.id.share_id);
+
 
 
         AdView mAdView = findViewById(R.id.adView);
-        MobileAds.initialize(this, "ca-app-pub-7419624357060010/1518124246");
+        MobileAds.initialize(this, "ca-app-pub-1716189511430378/1058673834");
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+
 
 
         sbRed.setOnSeekBarChangeListener(this);
         sbGreen.setOnSeekBarChangeListener(this);
         sbBlue.setOnSeekBarChangeListener(this);
+        rate.setOnClickListener(this);
+        share.setOnClickListener(this);
 
 
     }
@@ -130,22 +136,11 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     }
 
 
-
-
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_files, menu);
-
-        return super.onCreateOptionsMenu(menu);
-    }
-
     @SuppressLint("NonConstantResourceId")
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public void onClick(View v) {
 
-        switch (item.getItemId()) {
+        switch (v.getId()){
 
             case R.id.share_id:
                 try {
@@ -160,29 +155,17 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
                 } catch (Exception e) {
                     //e.toString();
                 }
-
                 break;
+
 
 
             case R.id.rate_id:
-
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=co.banglabs.color_code_generator")));
-
-
                 break;
+
         }
 
 
-        return super.onOptionsItemSelected(item);
+
     }
-
-
-
-
-
-
-
-
-
-
 }
