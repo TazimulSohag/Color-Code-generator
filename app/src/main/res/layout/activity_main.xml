@@ -6,20 +6,70 @@
     tools:context=".MainActivity">
 
     <RelativeLayout
-        android:id="@+id/share_rate_id"
-        android:layout_width="match_parent"
+        android:id="@+id/contact_us_id"
+        android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:orientation="horizontal">
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/contact_us_txt_id"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="3dp"
+            android:gravity="center"
+            android:text="@string/contact_us"
+            android:textColor="#12245C"
+            android:textSize="15sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_toEndOf="@+id/contact_us_txt_id"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/web_id"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/web"
+                android:foreground="@drawable/web"
+                android:gravity="center" />
+
+            <Button
+
+                android:id="@+id/gmail.id"
+                android:layout_width="30dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@id/web_id"
+                android:background="@drawable/gmail"
+                android:foreground="@drawable/gmail"
+                android:gravity="center" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/share_rate_id"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp">
 
         <Button
-            android:gravity="center"
             android:id="@+id/share_id"
             android:layout_width="30dp"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="10dp"
-            android:background="@drawable/share_icon" />
+            android:background="@drawable/share_icon"
+            android:foreground="@drawable/share_icon"
+            android:gravity="center" />
 
         <Button
             android:id="@+id/rate_id"
@@ -27,8 +77,8 @@
             android:layout_height="match_parent"
             android:layout_marginEnd="10dp"
             android:layout_toStartOf="@+id/share_id"
-            android:background="@drawable/rate_icon" />
-
+            android:background="@drawable/rate_icon"
+            android:foreground="@drawable/rate_icon" />
     </RelativeLayout>
 
 
@@ -45,14 +95,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="8dp"
             android:gravity="center"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:gravity="center"
                 android:text="@string/color"
                 android:textColor="#FF0000"
@@ -62,7 +111,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginBottom="8dp"
                 android:gravity="center"
                 android:text="@string/code"
                 android:textColor="#00FF00"
@@ -72,7 +120,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginBottom="8dp"
                 android:gravity="center"
                 android:text="@string/generator"
                 android:textColor="#0000FF"
@@ -140,25 +187,25 @@
 
 
     <TextView
-        android:textSize="15sp"
-        android:textColor="#0000FF"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/container_id"
-        android:gravity="center"
+        android:id="@+id/poweredby_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/powered_by_banglabs_txt"/>
+        android:layout_below="@+id/container_id"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="@string/powered_by_banglabs_txt"
+        android:textColor="#0000FF"
+        android:textSize="15sp" />
 
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/sample_add_unit_id" />
+        ads:adUnitId="@string/real_add_unit_id" />
 
 
 </RelativeLayout>

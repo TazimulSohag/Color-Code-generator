@@ -1,8 +1,7 @@
 package co.banglabs.color_code_generator;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -10,18 +9,13 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
-
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-
-import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener, View.OnClickListener {
 
@@ -30,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     SeekBar sbRed, sbGreen, sbBlue;
     int red = 0, green = 0, blue = 0;
     Button share,rate;
+
+    Button web,gmail;
 
 
     @Override
@@ -45,6 +41,9 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         sbBlue = findViewById(R.id.sb_blue);
         rate = findViewById(R.id.rate_id);
         share = findViewById(R.id.share_id);
+        web = findViewById(R.id.web_id);
+        gmail = findViewById(R.id.gmail_id);
+
 
 
 
@@ -61,6 +60,34 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         rate.setOnClickListener(this);
         share.setOnClickListener(this);
 
+        web.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String weburl = "https://www.banglabs.co";
+                Intent web = new Intent(Intent.ACTION_VIEW);
+                web.setData(Uri.parse(weburl));
+                startActivity(web);
+
+
+            }
+        });
+
+
+        gmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent email = new Intent(Intent.ACTION_SEND);
+                email.putExtra(Intent.EXTRA_EMAIL, new String[]{"banglabs2020@gmail.com"});
+                email.putExtra(Intent.EXTRA_SUBJECT, " ");
+                email.putExtra(Intent.EXTRA_TEXT, "message");
+
+                //need this to prompts email client only
+                email.setType("message/rfc822");
+
+                startActivity(Intent.createChooser(email, "Choose an Email :"));
+
+            }
+        });
 
     }
 
